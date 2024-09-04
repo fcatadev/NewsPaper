@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "117735426310",
+    "project_id": "newspaper-a4c9b",
+    "storage_bucket": "newspaper-a4c9b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117735426310:android:754762e911ff1b9dcb3687",
+        "android_client_info": {
+          "package_name": "com.example.newspaper"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4rNvzD6M95hpHlcjScRh8Rf-5h3f03Bs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
