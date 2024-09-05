@@ -6,7 +6,15 @@
     <string name="register_fragment">Hello Register</string>
     <string name="maintenance_fragment">Hello Maintenance</string>
 
+    <!-- Maintenance -->
     <string name="maintenance_header">Bakımdayız…</string>
     <string name="maintenance_text">NewsPaperı sizlere daha iyi bir hizmet verebilmek için bakıma aldık. Anlayışınız için teşekkürler.</string>
+
+    <!-- Login -->
+    <string name="login_header">Haberler için hızlıca giriş yap!</string>
+    <string name="login_email">E-posta</string>
+    <string name="login_password">Şifre</string>
+    <string name="login">Giriş Yap</string>
+    <string name="sign_up_no_account">Henüz üye değilsen, hemen üye ol!</string>
 
 </resources>
