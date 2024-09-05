@@ -5,4 +5,8 @@
     <string name="login_fragment">Hello Login</string>
     <string name="register_fragment">Hello Register</string>
     <string name="maintenance_fragment">Hello Maintenance</string>
+
+    <string name="maintenance_header">Bakımdayız…</string>
+    <string name="maintenance_text">NewsPaperı sizlere daha iyi bir hizmet verebilmek için bakıma aldık. Anlayışınız için teşekkürler.</string>
+
 </resources>

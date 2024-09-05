@@ -4,18 +4,25 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.newspaper.R
 import com.example.newspaper.core.BaseFragment
 import com.example.newspaper.databinding.FragmentSplashBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
-class SplashFragment : BaseFragment<SplashViewModel, FragmentSplashBinding>(R.layout.fragment_splash) {
+class SplashFragment :
+    BaseFragment<SplashViewModel, FragmentSplashBinding>(R.layout.fragment_splash) {
 
     override val viewModel: SplashViewModel by viewModels()
 
     override fun onInitDataBinding() {
-        setupObservers()
-        viewModel.fetchRemoteConfigValues()
+        viewLifecycleOwner.lifecycleScope.launch {
+            delay(3000)
+            setupObservers()
+            viewModel.fetchRemoteConfigValues()
+        }
     }
 
     private fun setupObservers() {
@@ -31,7 +38,7 @@ class SplashFragment : BaseFragment<SplashViewModel, FragmentSplashBinding>(R.la
             when (status) {
                 VersionStatus.UP_TO_DATE -> proceedToAuth()
                 VersionStatus.OPTIONAL_UPDATE -> showOptionalUpdateDialog()
-                VersionStatus.MANDATORY_UPDATE -> showMandatoryUpdateDialog()
+                VersionStatus.FORCE_UPDATE -> showForceUpdateDialog()
             }
         }
     }
@@ -55,7 +62,7 @@ class SplashFragment : BaseFragment<SplashViewModel, FragmentSplashBinding>(R.la
             .show()
     }
 
-    private fun showMandatoryUpdateDialog() {
+    private fun showForceUpdateDialog() {
         val updateMessage = viewModel.updateMessage
         val updateLink = viewModel.updateLink
 

@@ -58,7 +58,7 @@ class SplashViewModel @Inject constructor() : BaseViewModel() {
                 versionStatusLiveData.postValue(VersionStatus.OPTIONAL_UPDATE)
             }
             currentVersion < minVersion -> {
-                versionStatusLiveData.postValue(VersionStatus.MANDATORY_UPDATE)
+                versionStatusLiveData.postValue(VersionStatus.FORCE_UPDATE)
             }
         }
     }
@@ -68,5 +68,5 @@ class SplashViewModel @Inject constructor() : BaseViewModel() {
 enum class VersionStatus {
     UP_TO_DATE,
     OPTIONAL_UPDATE,
-    MANDATORY_UPDATE
+    FORCE_UPDATE
 }
