@@ -1,5 +1,6 @@
 package com.example.newspaper.ui.auth.login
 
+import android.util.Log
 import androidx.fragment.app.viewModels
 import com.example.newspaper.R
 import com.example.newspaper.core.BaseFragment
@@ -10,7 +11,7 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>(R.layou
     override val viewModel: LoginViewModel by viewModels()
 
     override fun onInitDataBinding() {
-        TODO("Not yet implemented")
+        Log.d("test", "test")
     }
 
 

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">NewsPaper</string>
     <string name="toast_connection_error">Bağlantı hatası. Lütfen internet bağlantını kontrol edip tekrar dene</string>
+    <string name="splash_fragment">Hello Splash</string>
+    <string name="login_fragment">Hello Login</string>
+    <string name="register_fragment">Hello Register</string>
+    <string name="maintenance_fragment">Hello Maintenance</string>
 </resources>
