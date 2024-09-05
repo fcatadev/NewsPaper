@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NewsPaper</string>
+    <string name="toast_connection_error">Bağlantı hatası. Lütfen internet bağlantını kontrol edip tekrar dene</string>
 </resources>
