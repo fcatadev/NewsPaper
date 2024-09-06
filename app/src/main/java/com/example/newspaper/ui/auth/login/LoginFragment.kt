@@ -15,9 +15,7 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>(R.layou
 
     override fun onInitDataBinding() {
         observeEvent(viewModel.loginEvent, ::onViewEvent)
-        binding.loginButton.setOnClickListener {
-            viewModel.onSignUp()
-        }
+        binding.viewModel = viewModel
     }
 
     private fun onViewEvent(viewEvent: LoginViewEvent) {

@@ -39,7 +39,7 @@
                 android:id="@+id/tieEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
+                android:inputType="textEmailAddress"
                 android:typeface="monospace" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -60,6 +60,30 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbRememberMe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="@dimen/width_0"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/tvRememberMe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_14"
+                android:textColor="@color/gray_700"
+                android:text="@string/remember_me" />
+
+        </LinearLayout>
+
         <Button
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
@@ -78,7 +102,7 @@
             android:textSize="12sp"
             android:layout_gravity="center"
             android:text="@string/sign_up_no_account"
-            />
+            android:onClick="@{() -> viewModel.onSignUp()}"/>
 
     </LinearLayout>
 

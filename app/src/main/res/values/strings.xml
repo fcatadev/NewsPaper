@@ -16,5 +16,6 @@
     <string name="login_password">Şifre</string>
     <string name="login">Giriş Yap</string>
     <string name="sign_up_no_account">Henüz üye değilsen, hemen üye ol!</string>
+    <string name="remember_me">Beni hatırla</string>
 
 </resources>
