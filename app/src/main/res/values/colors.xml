@@ -9,4 +9,8 @@
     <color name="gray_700">#424D46</color>
     <color name="gray_600">#536259</color>
     <color name="gray_200">#E7EAE8</color>
+
+    <color name="red_700">#5C0504</color>
+    <color name="red_600">#810E10</color>
+    <color name="red_500">#A21314</color>
 </resources>
