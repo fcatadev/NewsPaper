@@ -23,6 +23,10 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>(R.layou
             is LoginViewEvent.NavigateToRegister -> {
                 findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
             }
+
+            is LoginViewEvent.NavigateToHome -> {
+                findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+            }
         }
     }
 

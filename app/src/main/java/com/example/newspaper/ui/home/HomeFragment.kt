@@ -1,20 +1,29 @@
 package com.example.newspaper.ui.home
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.newspaper.R
+import com.example.newspaper.core.BaseFragment
+import com.example.newspaper.databinding.FragmentHomeBinding
+import com.example.newspaper.extensions.observeEvent
+import dagger.hilt.android.AndroidEntryPoint
 
-class HomeFragment : Fragment() {
+@AndroidEntryPoint
+class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(R.layout.fragment_home) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    override val viewModel: HomeViewModel by viewModels()
+
+    override fun onInitDataBinding() {
+        observeEvent(viewModel.homeViewEvent, ::onViewEvent)
+        binding.viewModel = viewModel
+    }
+
+    private fun onViewEvent(viewEvent: HomeViewEvent) {
+        when (viewEvent) {
+            is HomeViewEvent.NavigateToLogin -> {
+                findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
+            }
+        }
     }
 
 }

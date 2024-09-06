@@ -4,4 +4,6 @@ sealed class LoginViewEvent {
 
     object NavigateToRegister : LoginViewEvent()
 
+    object NavigateToHome : LoginViewEvent()
+
 }
