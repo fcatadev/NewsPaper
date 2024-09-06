@@ -19,7 +19,7 @@
         android:paddingTop="@dimen/padding_24">
 
         <TextView
-            android:id="@+id/loginHeader"
+            android:id="@+id/tvLoginHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
@@ -36,7 +36,7 @@
             android:hint="@string/login_email">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tieEmail"
+                android:id="@+id/tieLoginEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
@@ -52,7 +52,7 @@
             android:hint="@string/login_password">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tiePassword"
+                android:id="@+id/tieLoginPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
@@ -85,18 +85,27 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="@dimen/margin_24"
             android:backgroundTint="@color/primary"
             android:text="@string/login"/>
 
+        <TextView
+            android:id="@+id/tvForgotPasswordButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textSize="12sp"
+            android:layout_gravity="center"
+            android:text="@string/forgot_password"/>
+
         <View style="@style/NPHorizontalDivider"
             android:layout_marginVertical="@dimen/margin_24"/>
 
         <TextView
-            android:id="@+id/registerButton"
+            android:id="@+id/tvRegisterButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"

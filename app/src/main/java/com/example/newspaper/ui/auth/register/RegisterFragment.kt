@@ -5,16 +5,31 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.newspaper.R
+import com.example.newspaper.core.BaseFragment
+import com.example.newspaper.databinding.FragmentRegisterBinding
+import com.example.newspaper.extensions.observeEvent
+import dagger.hilt.android.AndroidEntryPoint
 
-class RegisterFragment : Fragment() {
+@AndroidEntryPoint
+class RegisterFragment :
+    BaseFragment<RegisterViewModel, FragmentRegisterBinding>(R.layout.fragment_register) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false)
+    override val viewModel: RegisterViewModel by viewModels()
+
+    override fun onInitDataBinding() {
+        observeEvent(viewModel.registerEvent, ::onViewEvent)
+        binding.viewModel = viewModel
+    }
+
+    private fun onViewEvent(viewEvent: RegisterViewEvent) {
+        when(viewEvent) {
+            is RegisterViewEvent.NavigateToLogin -> {
+                findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+            }
+        }
     }
 
 }

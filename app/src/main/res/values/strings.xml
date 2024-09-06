@@ -15,7 +15,13 @@
     <string name="login_email">E-posta</string>
     <string name="login_password">Şifre</string>
     <string name="login">Giriş Yap</string>
-    <string name="sign_up_no_account">Henüz üye değilsen, hemen üye ol!</string>
+    <string name="sign_up_no_account">Henüz üye değilsen, hemen yeni hesap oluştur!</string>
+    <string name="forgot_password">Şifremi Unuttum</string>
     <string name="remember_me">Beni hatırla</string>
+
+    <!-- Register -->
+    <string name="register_header">Haberlerden uzak kalma, hemen kayıt ol!</string>
+    <string name="register">Kayıt Ol</string>
+    <string name="i_have_a_membership">Üyeliğiniz varsa, hemen giriş yap!</string>
 
 </resources>
