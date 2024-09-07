@@ -16,6 +16,9 @@
     <string name="favorite">Favoriler</string>
     <string name="home">Ana Sayfa</string>
     <string name="exit">Çıkış</string>
+    <string name="news">News</string>
+    <string name="paper">Paper</string>
+    <string name="top_headlines">En Önemli Başlıklar</string>
 
     <!-- Maintenance -->
     <string name="maintenance_header">Bakımdayız…</string>

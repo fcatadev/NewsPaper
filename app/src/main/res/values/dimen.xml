@@ -65,6 +65,8 @@
 
     <!-- Text Size -->
     <dimen name="text_size_1">1sp</dimen>
+    <dimen name="text_size_3">3sp</dimen>
+    <dimen name="text_size_5">5sp</dimen>
     <dimen name="text_size_7">7sp</dimen>
     <dimen name="text_size_8">8sp</dimen>
     <dimen name="text_size_10">10sp</dimen>

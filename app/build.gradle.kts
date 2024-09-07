@@ -68,4 +68,5 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
+    implementation(libs.glide)
 }
