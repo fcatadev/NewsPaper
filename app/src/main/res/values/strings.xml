@@ -10,6 +10,7 @@
     <string name="then">Daha sonra</string>
     <string name="update">Güncelle</string>
     <string name="ok">Tamam</string>
+    <string name="reset">Sıfırla</string>
 
     <!-- Maintenance -->
     <string name="maintenance_header">Bakımdayız…</string>
@@ -24,6 +25,8 @@
     <string name="forgot_password">Şifremi Unuttum</string>
     <string name="remember_me">Beni hatırla</string>
     <string name="incorrect_login">Giriş bilgileriniz hatalıdır, lütfen tekrar deneyiniz.</string>
+    <string name="email_for_forgot_password">Şifresini sıfırlamak istediğiniz e-posta adresini giriniz</string>
+    <string name="please_enter_email">Lütfen e-posta adresini giriniz.</string>
 
     <!-- Register -->
     <string name="register_header">Haberlerden uzak kalma, hemen kayıt ol!</string>

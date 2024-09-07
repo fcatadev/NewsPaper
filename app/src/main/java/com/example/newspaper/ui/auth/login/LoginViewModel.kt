@@ -47,4 +47,15 @@ class LoginViewModel @Inject constructor(
         _loginEvent.value = Event(LoginViewEvent.NavigateToRegister)
     }
 
+    fun resetPassword(email: String) {
+        firebaseAuth.sendPasswordResetEmail(email)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    _loginEvent.value = Event(LoginViewEvent.ShowMessage("Şifre sıfırlama bağlantısı e-posta adresinize gönderildi."))
+                } else {
+                    _loginEvent.value = Event(LoginViewEvent.ShowError(task.exception?.message ?: "Şifre sıfırlama başarısız."))
+                }
+            }
+    }
+
 }

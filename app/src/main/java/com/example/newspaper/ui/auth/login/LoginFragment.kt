@@ -22,6 +22,13 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>(R.layou
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             requireActivity().finish()
         }
+
+        binding.tvForgotPasswordButton.setOnClickListener {
+            val forgotPasswordBottomSheet = ForgotPasswordBottomSheet { email ->
+                viewModel.resetPassword(email)
+            }
+            forgotPasswordBottomSheet.show(childFragmentManager, "ForgotPasswordBottomSheet")
+        }
     }
 
     private fun onViewEvent(viewEvent: LoginViewEvent) {
@@ -42,7 +49,24 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>(R.layou
                     }
                     .show()
             }
+
+            is LoginViewEvent.ShowMessage -> {
+                showAlert(viewEvent.message)
+            }
+
+            is LoginViewEvent.ShowError -> {
+                showAlert(viewEvent.error)
+            }
         }
+    }
+
+    private fun showAlert(message: String) {
+        AlertDialog.Builder(requireContext())
+            .setMessage(message)
+            .setPositiveButton(getString(R.string.ok)) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
     }
 
 }

@@ -8,4 +8,8 @@ sealed class LoginViewEvent {
 
     object IncorrectLogin : LoginViewEvent()
 
+    data class ShowMessage(val message: String) : LoginViewEvent()
+
+    data class ShowError(val error: String) : LoginViewEvent()
+
 }
