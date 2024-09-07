@@ -1,5 +1,6 @@
 package com.example.newspaper.ui.auth.login
 
+import androidx.activity.addCallback
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.newspaper.R
@@ -16,6 +17,10 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>(R.layou
     override fun onInitDataBinding() {
         observeEvent(viewModel.loginEvent, ::onViewEvent)
         binding.viewModel = viewModel
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            requireActivity().finish()
+        }
     }
 
     private fun onViewEvent(viewEvent: LoginViewEvent) {
