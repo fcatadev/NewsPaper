@@ -5,6 +5,10 @@
     <string name="login_fragment">Hello Login</string>
     <string name="register_fragment">Hello Register</string>
     <string name="maintenance_fragment">Hello Maintenance</string>
+    <string name="yes">Evet</string>
+    <string name="no">Hayır</string>
+    <string name="then">Daha sonra</string>
+    <string name="update">Güncelle</string>
 
     <!-- Maintenance -->
     <string name="maintenance_header">Bakımdayız…</string>

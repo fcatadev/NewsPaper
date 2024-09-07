@@ -53,10 +53,10 @@ class SplashFragment :
 
         AlertDialog.Builder(requireContext())
             .setMessage(updateMessage)
-            .setPositiveButton("Evet") { _, _ ->
+            .setPositiveButton(getString(R.string.update)) { _, _ ->
                 openUpdateLink(updateLink)
             }
-            .setNegativeButton("Hayır") { _, _ ->
+            .setNegativeButton(getString(R.string.then)) { _, _ ->
                 proceedToAuth()
             }
             .show()
@@ -68,7 +68,7 @@ class SplashFragment :
 
         AlertDialog.Builder(requireContext())
             .setMessage(updateMessage)
-            .setPositiveButton("Evet") { _, _ ->
+            .setPositiveButton(getString(R.string.update)) { _, _ ->
                 openUpdateLink(updateLink)
             }
             .setCancelable(false)

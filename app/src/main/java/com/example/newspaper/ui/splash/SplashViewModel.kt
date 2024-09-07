@@ -1,9 +1,9 @@
 package com.example.newspaper.ui.splash
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.newspaper.BuildConfig
 import com.example.newspaper.core.BaseViewModel
+import com.example.newspaper.data.remote.firebase.RemoteConfigParameters
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -33,9 +33,9 @@ class SplashViewModel @Inject constructor() : BaseViewModel() {
         remoteConfig.fetchAndActivate()
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    val isMaintenance = remoteConfig.getBoolean("isMaintenance")
-                    updateMessage = remoteConfig.getString("updateMessage")
-                    updateLink = remoteConfig.getString("updateLink")
+                    val isMaintenance = remoteConfig.getBoolean(RemoteConfigParameters.IS_MAINTENANCE)
+                    updateMessage = remoteConfig.getString(RemoteConfigParameters.UPDATE_MESSAGE)
+                    updateLink = remoteConfig.getString(RemoteConfigParameters.UPDATE_LINK)
                     maintenanceLiveData.postValue(isMaintenance)
                 } else {
                     maintenanceLiveData.postValue(false)
@@ -44,11 +44,9 @@ class SplashViewModel @Inject constructor() : BaseViewModel() {
     }
 
     fun checkVersion() {
-        val minVersion = remoteConfig.getString("minVersion").split(".").joinToString("").toInt()
-        val maxVersion = remoteConfig.getString("maxVersion").split(".").joinToString("").toInt()
+        val minVersion = remoteConfig.getString(RemoteConfigParameters.MIN_VERSION).split(".").joinToString("").toInt()
+        val maxVersion = remoteConfig.getString(RemoteConfigParameters.MAX_VERSION).split(".").joinToString("").toInt()
         val currentVersion = BuildConfig.VERSION_NAME.split(".").joinToString("").toInt()
-        Log.d("178minVersion: ", minVersion.toString())
-        Log.d("178maxVersion: ", maxVersion.toString())
 
         when {
             currentVersion >= maxVersion -> {
