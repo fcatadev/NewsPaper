@@ -1,6 +1,7 @@
 package com.example.newspaper.ui.splash
 
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.fragment.app.viewModels
@@ -8,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.newspaper.R
 import com.example.newspaper.core.BaseFragment
+import com.example.newspaper.data.remote.preferences.PreferencesConstants
 import com.example.newspaper.databinding.FragmentSplashBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -25,6 +27,14 @@ class SplashFragment :
         }
     }
 
+    private fun isUserLoggedIn(): Boolean {
+        val sharedPrefs = requireContext().getSharedPreferences(
+            PreferencesConstants.USER_PREFS,
+            Context.MODE_PRIVATE
+        )
+        return sharedPrefs.getBoolean(PreferencesConstants.IS_LOGGED_IN, false)
+    }
+
     private fun setupObservers() {
         viewModel.maintenanceLiveData.observe(viewLifecycleOwner) { isMaintenance ->
             if (isMaintenance) {
@@ -36,15 +46,19 @@ class SplashFragment :
 
         viewModel.versionStatusLiveData.observe(viewLifecycleOwner) { status ->
             when (status) {
-                VersionStatus.UP_TO_DATE -> proceedToAuth()
+                VersionStatus.UP_TO_DATE -> proceedToAuthOrHome()
                 VersionStatus.OPTIONAL_UPDATE -> showOptionalUpdateDialog()
                 VersionStatus.FORCE_UPDATE -> showForceUpdateDialog()
             }
         }
     }
 
-    private fun proceedToAuth() {
-        findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+    private fun proceedToAuthOrHome() {
+        if (isUserLoggedIn()) {
+            findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+        } else {
+            findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+        }
     }
 
     private fun showOptionalUpdateDialog() {
@@ -57,7 +71,7 @@ class SplashFragment :
                 openUpdateLink(updateLink)
             }
             .setNegativeButton(getString(R.string.then)) { _, _ ->
-                proceedToAuth()
+                proceedToAuthOrHome()
             }
             .show()
     }

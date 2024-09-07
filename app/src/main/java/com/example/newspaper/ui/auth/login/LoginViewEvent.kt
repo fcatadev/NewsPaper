@@ -6,4 +6,6 @@ sealed class LoginViewEvent {
 
     object NavigateToHome : LoginViewEvent()
 
+    object IncorrectLogin : LoginViewEvent()
+
 }

@@ -50,13 +50,6 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/invalid_email"
-            android:textColor="@color/red_600"
-            isVisible="@{viewModel.inputState.isInvalidEmail}" />
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilLoginPasswordEditText"
             android:layout_width="match_parent"
@@ -74,13 +67,6 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/invalid_password"
-            android:textColor="@color/red_600"
-            isVisible="@{viewModel.inputState.isInvalidPassword}" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -93,7 +79,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minWidth="@dimen/width_0"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal"
+                android:checked="@={viewModel.inputState.isRememberMeChecked}"/>
 
             <TextView
                 android:id="@+id/tvRememberMe"

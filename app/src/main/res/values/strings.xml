@@ -9,6 +9,7 @@
     <string name="no">Hayır</string>
     <string name="then">Daha sonra</string>
     <string name="update">Güncelle</string>
+    <string name="ok">Tamam</string>
 
     <!-- Maintenance -->
     <string name="maintenance_header">Bakımdayız…</string>
@@ -22,6 +23,7 @@
     <string name="sign_up_no_account">Henüz üye değilsen, hemen yeni hesap oluştur!</string>
     <string name="forgot_password">Şifremi Unuttum</string>
     <string name="remember_me">Beni hatırla</string>
+    <string name="incorrect_login">Giriş bilgileriniz hatalıdır, lütfen tekrar deneyiniz.</string>
 
     <!-- Register -->
     <string name="register_header">Haberlerden uzak kalma, hemen kayıt ol!</string>

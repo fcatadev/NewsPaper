@@ -1,5 +1,6 @@
 package com.example.newspaper.ui.auth.login
 
+import android.app.AlertDialog
 import androidx.activity.addCallback
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -31,6 +32,15 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>(R.layou
 
             is LoginViewEvent.NavigateToHome -> {
                 findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+            }
+
+            is LoginViewEvent.IncorrectLogin -> {
+                AlertDialog.Builder(requireContext())
+                    .setMessage(getString(R.string.incorrect_login))
+                    .setPositiveButton(getString(R.string.ok)) { dialog, _ ->
+                        dialog.dismiss()
+                    }
+                    .show()
             }
         }
     }
