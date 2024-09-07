@@ -1,5 +1,6 @@
 package com.example.newspaper.ui.auth.register
 
+import android.app.AlertDialog
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.newspaper.R
@@ -22,7 +23,13 @@ class RegisterFragment :
     private fun onViewEvent(viewEvent: RegisterViewEvent) {
         when(viewEvent) {
             is RegisterViewEvent.NavigateToLogin -> {
-                findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+                AlertDialog.Builder(requireContext())
+                    .setMessage(getString(R.string.correct_register))
+                    .setPositiveButton(getString(R.string.ok)) { dialog, _ ->
+                        dialog.dismiss()
+                        findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+                    }
+                    .show()
             }
         }
     }

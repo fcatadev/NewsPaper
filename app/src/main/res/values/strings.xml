@@ -34,5 +34,6 @@
     <string name="i_have_a_membership">Üyeliğiniz varsa, hemen giriş yap!</string>
     <string name="invalid_email">Geçersiz Eposta!</string>
     <string name="invalid_password">Şifreniz en az 8 karakterden oluşmalıdır!</string>
+    <string name="correct_register">Kaydınız başarı ile oluşturuldu giriş yapabilirsiniz.</string>
 
 </resources>
