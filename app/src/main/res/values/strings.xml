@@ -5,12 +5,17 @@
     <string name="login_fragment">Hello Login</string>
     <string name="register_fragment">Hello Register</string>
     <string name="maintenance_fragment">Hello Maintenance</string>
+    <string name="home_fragment">Hello Home</string>
+    <string name="fav_fragment">Hello Favorite</string>
     <string name="yes">Evet</string>
     <string name="no">Hayır</string>
     <string name="then">Daha sonra</string>
     <string name="update">Güncelle</string>
     <string name="ok">Tamam</string>
     <string name="reset">Sıfırla</string>
+    <string name="favorite">Favoriler</string>
+    <string name="home">Ana Sayfa</string>
+    <string name="exit">Çıkış</string>
 
     <!-- Maintenance -->
     <string name="maintenance_header">Bakımdayız…</string>
@@ -35,5 +40,7 @@
     <string name="invalid_email">Geçersiz Eposta!</string>
     <string name="invalid_password">Şifreniz en az 8 karakterden oluşmalıdır!</string>
     <string name="correct_register">Kaydınız başarı ile oluşturuldu giriş yapabilirsiniz.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

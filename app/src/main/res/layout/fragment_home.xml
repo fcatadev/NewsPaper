@@ -18,14 +18,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.authors}" />
-
-        <Button
-            android:id="@+id/btnLogOut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Çıkış Yap"
-            android:onClick="@{() -> viewModel.signOut()}"/>
+            android:text="@string/home_fragment" />
 
     </LinearLayout>
 

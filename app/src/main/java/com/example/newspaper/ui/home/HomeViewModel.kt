@@ -17,7 +17,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val firebaseAuth: FirebaseAuth,
     @ApplicationContext private val context: Context,
     private val repository: NewsRepository
 ) : BaseViewModel() {
@@ -30,12 +29,6 @@ class HomeViewModel @Inject constructor(
 
     val inputState = HomeInputState()
     private val sharedPrefs = context.getSharedPreferences(PreferencesConstants.USER_PREFS, Context.MODE_PRIVATE)
-
-    fun signOut() {
-        firebaseAuth.signOut()
-        sharedPrefs.edit().putBoolean(PreferencesConstants.IS_LOGGED_IN, false).apply()
-        _homeViewEvent.value = Event(HomeViewEvent.NavigateToLogin)
-    }
 
     fun getTopHeadlines(country: String, apiKey: String) {
         viewModelScope.launch {
