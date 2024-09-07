@@ -17,6 +17,9 @@ androidx-fragment-ktx = "1.8.3"
 androidx-activity-ktx = "1.9.1"
 navigation = "2.8.0"
 firebase-config = "22.0.0"
+retrofit = "2.9.0"
+lifecycle-livedata-ktx = "2.6.1"
+lifecycle-viewmodel-ktx = "2.6.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -36,6 +39,10 @@ androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref
 navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
 navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
 firebase-config = { module = "com.google.firebase:firebase-config", version.ref = "firebase-config" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle-livedata-ktx" }
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle-viewmodel-ktx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

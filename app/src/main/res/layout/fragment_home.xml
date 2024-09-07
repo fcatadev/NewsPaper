@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/maintenance_text" />
+            android:text="@{viewModel.authors}" />
 
         <Button
             android:id="@+id/btnLogOut"

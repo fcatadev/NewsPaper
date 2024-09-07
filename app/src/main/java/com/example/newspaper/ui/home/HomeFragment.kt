@@ -16,6 +16,8 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(R.layout.f
     override fun onInitDataBinding() {
         observeEvent(viewModel.homeViewEvent, ::onViewEvent)
         binding.viewModel = viewModel
+
+        viewModel.getTopHeadlines("us", "ffd3b86bbf304e6eb4537a796969cbb4")
     }
 
     private fun onViewEvent(viewEvent: HomeViewEvent) {
