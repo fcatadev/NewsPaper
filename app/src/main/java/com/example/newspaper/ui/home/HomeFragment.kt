@@ -1,6 +1,7 @@
 package com.example.newspaper.ui.home
 
 import android.os.Bundle
+import androidx.activity.addCallback
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -55,6 +56,10 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(R.layout.f
             requireContext(),
             getString(R.string.connection_fail)
         )
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            requireActivity().finish()
+        }
     }
 
     private fun onViewEvent(viewEvent: HomeViewEvent) {

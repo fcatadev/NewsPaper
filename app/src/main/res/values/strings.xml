@@ -14,6 +14,7 @@
     <string name="ok">Tamam</string>
     <string name="reset">Sıfırla</string>
     <string name="favorite">Favoriler</string>
+    <string name="favorite_news">Favori Haberler</string>
     <string name="home">Ana Sayfa</string>
     <string name="exit">Çıkış</string>
     <string name="news">News</string>
@@ -21,6 +22,7 @@
     <string name="top_headlines">En Önemli Başlıklar</string>
     <string name="connection_fail">Bağlantı hatası haberler yüklenemedi.</string>
     <string name="tech_news">Teknoloji Haberleri</string>
+    <string name="already_added_fav">Bu haber zaten favorilere eklenmiştir.</string>
 
     <!-- Maintenance -->
     <string name="maintenance_header">Bakımdayız…</string>

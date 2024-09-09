@@ -69,4 +69,6 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
     implementation(libs.glide)
+    implementation(libs.room.ktx)
+    ksp(libs.room.compiler)
 }
