@@ -1,6 +1,7 @@
 package com.example.newspaper.ui.home
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.addCallback
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -36,12 +37,16 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(R.layout.f
             GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
         binding.rvTechNews.adapter = techNewsAdapter
 
+        showLoading(true)
+
         viewModel.articles.observe(viewLifecycleOwner) { articles ->
             topHeadlinesAdapter.submitList(articles)
+            checkLoadingCompleted()
         }
 
         viewModel.allTechNews.observe(viewLifecycleOwner) { allTechNews ->
             techNewsAdapter.submitList(allTechNews)
+            checkLoadingCompleted()
         }
 
         viewModel.getTopHeadlines(
@@ -81,6 +86,17 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(R.layout.f
 
                 findNavController().navigate(R.id.action_homeFragment_to_newsDetailFragment, bundle)
             }
+        }
+    }
+
+    private fun showLoading(show: Boolean) {
+        binding.progressBar.visibility = if (show) View.VISIBLE else View.GONE
+        binding.viewOverlay.visibility = if (show) View.VISIBLE else View.GONE
+    }
+
+    private fun checkLoadingCompleted() {
+        if (viewModel.articles.value?.isNotEmpty() == true && viewModel.allTechNews.value?.isNotEmpty() == true) {
+            showLoading(false)
         }
     }
 
