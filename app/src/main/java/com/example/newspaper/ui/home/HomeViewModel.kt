@@ -53,4 +53,18 @@ class HomeViewModel @Inject constructor(
         }
     }
 
+    fun onArticleClicked(article: ArticleResponse) {
+        _homeViewEvent.value = Event(
+            HomeViewEvent.NavigateToNewsDetail(
+                author = article.author,
+                title = article.title,
+                description = article.description,
+                url = article.url,
+                urlToImage = article.urlToImage,
+                publishedAt = article.publishedAt,
+                content = article.content
+            )
+        )
+    }
+
 }

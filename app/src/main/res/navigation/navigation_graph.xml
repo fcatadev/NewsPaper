@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_homeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment" />
     </fragment>
 
     <fragment
@@ -59,5 +62,29 @@
         android:name="com.example.newspaper.ui.favorites.FavoriteFragment"
         android:label="fragment_favorites"
         tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/newsDetailFragment"
+        android:name="com.example.newspaper.ui.newsdetail.NewsDetailFragment"
+        android:label="fragment_news_detail"
+        tools:layout="@layout/fragment_news_detail" >
+<!--        <argument-->
+<!--            android:name="author"-->
+<!--            app:argType="string" />-->
+<!--        <argument-->
+<!--            android:name="title"-->
+<!--            app:argType="string" />-->
+<!--        <argument-->
+<!--            android:name="description"-->
+<!--            app:argType="string" />-->
+<!--        <argument-->
+<!--            android:name="url"-->
+<!--            app:argType="string" />-->
+<!--        <argument-->
+<!--            android:name="urlToImage"-->
+<!--            app:argType="string" />-->
+<!--        <argument-->
+<!--            android:name="publishedAt"-->
+<!--            app:argType="string" />-->
+    </fragment>
 
 </navigation>

@@ -6,13 +6,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.newspaper.core.BaseAdapter
 import com.example.newspaper.data.model.response.ArticleResponse
 
-class TechNewsAdapter : BaseAdapter<ArticleResponse>() {
+class TechNewsAdapter(
+    private val onItemClick: (ArticleResponse) -> Unit
+) : BaseAdapter<ArticleResponse>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         inflater: LayoutInflater
     ): RecyclerView.ViewHolder {
-        return TechNewsViewHolder(parent, inflater)
+        return TechNewsViewHolder(parent, inflater, onItemClick)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {

@@ -17,7 +17,8 @@ import com.example.newspaper.extensions.executeAfter
 
 class TechNewsViewHolder(
     parent: ViewGroup,
-    inflater: LayoutInflater
+    inflater: LayoutInflater,
+    private val onItemClick: (ArticleResponse) -> Unit
 ) : BaseViewHolder<ItemTechNewsBinding>(ItemTechNewsBinding.inflate(inflater, parent,false)) {
 
     fun bind(item: ArticleResponse) {
@@ -52,6 +53,10 @@ class TechNewsViewHolder(
                     }
                 })
                 .into(binding.ivUrlToImage)
+
+            binding.root.setOnClickListener {
+                onItemClick(item)
+            }
         }
     }
 
