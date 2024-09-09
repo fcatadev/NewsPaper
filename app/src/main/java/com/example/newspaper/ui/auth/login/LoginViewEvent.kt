@@ -12,4 +12,6 @@ sealed class LoginViewEvent {
 
     data class ShowError(val error: String) : LoginViewEvent()
 
+    object IsInputEmpty : LoginViewEvent()
+
 }

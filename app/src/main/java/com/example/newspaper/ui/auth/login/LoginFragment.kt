@@ -57,6 +57,10 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>(R.layou
             is LoginViewEvent.ShowError -> {
                 showAlert(viewEvent.error)
             }
+
+            is LoginViewEvent.IsInputEmpty -> {
+                showAlert(getString(R.string.please_enter_email_or_password))
+            }
         }
     }
 

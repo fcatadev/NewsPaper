@@ -56,7 +56,7 @@ class RegisterViewModel @Inject constructor(
     }
 
     fun onSignIn() {
-        _registerEvent.value = Event(RegisterViewEvent.NavigateToLogin)
+        _registerEvent.value = Event(RegisterViewEvent.NavigateToLoginForNotRegister)
     }
 
 }

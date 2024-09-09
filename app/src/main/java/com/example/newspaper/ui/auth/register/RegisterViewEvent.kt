@@ -4,4 +4,6 @@ sealed class RegisterViewEvent {
 
     object NavigateToLogin : RegisterViewEvent()
 
+    object NavigateToLoginForNotRegister : RegisterViewEvent()
+
 }

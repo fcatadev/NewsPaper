@@ -35,6 +35,7 @@
     <string name="incorrect_login">Giriş bilgileriniz hatalıdır, lütfen tekrar deneyiniz.</string>
     <string name="email_for_forgot_password">Şifresini sıfırlamak istediğiniz e-posta adresini giriniz</string>
     <string name="please_enter_email">Lütfen e-posta adresini giriniz.</string>
+    <string name="please_enter_email_or_password">Lütfen giriş bilgilerinizi eksiksiz giriniz.</string>
 
     <!-- Register -->
     <string name="register_header">Haberlerden uzak kalma, hemen kayıt ol!</string>

@@ -26,7 +26,6 @@ class TopHeadlinesViewHolder(
 
             binding.pbNewsPhoto.visibility = View.VISIBLE
 
-            // Glide ile resim yükleme ve listener ile durumu kontrol etme
             Glide.with(binding.ivUrlToImage.context)
                 .load(item.urlToImage)
                 .error(R.drawable.ic_launcher_foreground)
@@ -37,7 +36,6 @@ class TopHeadlinesViewHolder(
                         target: Target<Drawable>,
                         isFirstResource: Boolean
                     ): Boolean {
-                        // Yükleme başarısız olursa ProgressBar'ı gizle
                         binding.pbNewsPhoto.visibility = View.GONE
                         return false
                     }
@@ -49,7 +47,6 @@ class TopHeadlinesViewHolder(
                         dataSource: DataSource,
                         isFirstResource: Boolean
                     ): Boolean {
-                        // Resim yüklendiğinde ProgressBar'ı gizle
                         binding.pbNewsPhoto.visibility = View.GONE
                         return false
                     }
