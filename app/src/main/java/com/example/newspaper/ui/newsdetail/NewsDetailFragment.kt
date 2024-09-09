@@ -1,6 +1,5 @@
 package com.example.newspaper.ui.newsdetail
 
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.example.newspaper.R
@@ -8,7 +7,7 @@ import com.example.newspaper.core.BaseFragment
 import com.example.newspaper.data.model.favorite.FavoriteArticle
 import com.example.newspaper.data.remote.NewsKeys
 import com.example.newspaper.databinding.FragmentNewsDetailBinding
-import com.example.newspaper.extensions.observeEvent
+import com.example.newspaper.extensions.formatAsReadableDate
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -41,10 +40,11 @@ class NewsDetailFragment :
 
     private fun getNewsDetailData() {
         arguments?.let { bundle ->
+
             binding.tvHeader.text = bundle.getString(NewsKeys.TITLE)
             binding.tvAuthor.text = bundle.getString(NewsKeys.AUTHOR)
             binding.tvDescription.text = bundle.getString(NewsKeys.DESCRIPTION)
-            binding.tvDate.text = bundle.getString(NewsKeys.PUBLISHEDAT)
+            binding.tvDate.text = bundle.getString(NewsKeys.PUBLISHEDAT)?.formatAsReadableDate()
             Glide.with(requireContext())
                 .load(bundle.getString(NewsKeys.URLTOIMAGE))
                 .into(binding.ivNewsPic)

@@ -1,5 +1,8 @@
 package com.example.newspaper.extensions
 
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
+import java.util.Locale
 import java.util.regex.Pattern
 
 val String.Companion.EMPTY: String
@@ -16,4 +19,16 @@ fun String.isEmailValid(): Boolean {
                 ")+"
     )
     return emailPattern.matcher(this).matches()
+}
+
+fun String.formatAsReadableDate(): String {
+    return try {
+        val zonedDateTime = ZonedDateTime.parse(this)
+
+        val formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy, HH:mm", Locale("tr"))
+
+        zonedDateTime.format(formatter)
+    } catch (e: Exception) {
+        this
+    }
 }
