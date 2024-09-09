@@ -1,6 +1,7 @@
 package com.example.newspaper.ui.home
 
 import android.content.Context
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -25,19 +26,31 @@ class HomeViewModel @Inject constructor(
     private val _articles = MutableLiveData<List<ArticleResponse>>()
     val articles: LiveData<List<ArticleResponse>> get() = _articles
 
+    private val _allTechNews = MutableLiveData<List<ArticleResponse>>()
+    val allTechNews: LiveData<List<ArticleResponse>> get() = _allTechNews
 
     val inputState = HomeInputState()
 
-    fun getTopHeadlines(country: String, apiKey: String) {
+    fun getTopHeadlines(country: String, apiKey: String, context: Context, failText: String) {
         viewModelScope.launch {
             val response = repository.getTopHeadlines(country, apiKey)
             if (response.isSuccessful) {
                 _articles.value = response.body()?.articles ?: emptyList()
             } else {
-                // Hata yönetimi yapılabilir
+                Toast.makeText(context, failText, Toast.LENGTH_LONG).show()
             }
         }
     }
 
+    fun getAllTechNews(query: String, apiKey: String, context: Context, failText: String) {
+        viewModelScope.launch {
+            val response = repository.getAllTechNews(query, apiKey)
+            if (response.isSuccessful) {
+                _allTechNews.value = response.body()?.articles ?: emptyList()
+            } else {
+                Toast.makeText(context, failText, Toast.LENGTH_LONG).show()
+            }
+        }
+    }
 
 }

@@ -39,6 +39,5 @@ abstract class BaseFragment<VM : BaseViewModel, VB : ViewDataBinding>(
         })
     }
 
-    // Event handling metodu, alt sınıfta override edilmelidir
     open fun handleViewEvent(event: Any) {}
 }

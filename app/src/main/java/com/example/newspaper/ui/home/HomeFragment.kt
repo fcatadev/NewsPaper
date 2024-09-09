@@ -2,9 +2,11 @@ package com.example.newspaper.ui.home
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.newspaper.R
 import com.example.newspaper.core.BaseFragment
+import com.example.newspaper.data.remote.ApiParameters
 import com.example.newspaper.databinding.FragmentHomeBinding
 import com.example.newspaper.extensions.observeEvent
 import dagger.hilt.android.AndroidEntryPoint
@@ -14,6 +16,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(R.layout.f
 
     override val viewModel: HomeViewModel by viewModels()
     private val topHeadlinesAdapter = TopHeadlinesAdapter()
+    private val techNewsAdapter = TechNewsAdapter()
 
     override fun onInitDataBinding() {
         observeEvent(viewModel.homeViewEvent, ::onViewEvent)
@@ -21,13 +24,19 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(R.layout.f
 
         binding.rvTopHeadlines.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvTopHeadlines.adapter = topHeadlinesAdapter
+        binding.rvTechNews.layoutManager = GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
+        binding.rvTechNews.adapter = techNewsAdapter
 
         viewModel.articles.observe(viewLifecycleOwner) { articles ->
             topHeadlinesAdapter.submitList(articles)
         }
 
+        viewModel.allTechNews.observe(viewLifecycleOwner) { allTechNews ->
+            techNewsAdapter.submitList(allTechNews)
+        }
 
-        viewModel.getTopHeadlines("us", "ffd3b86bbf304e6eb4537a796969cbb4")
+        viewModel.getTopHeadlines(ApiParameters.COUNTRY, ApiParameters.API_KEY, requireContext(), getString(R.string.connection_fail))
+        viewModel.getAllTechNews(ApiParameters.QUERY, ApiParameters.API_KEY, requireContext(), getString(R.string.connection_fail))
     }
 
     private fun onViewEvent(viewEvent: HomeViewEvent) {

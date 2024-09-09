@@ -112,6 +112,10 @@
     <dimen name="width_152">152dp</dimen>
     <dimen name="width_170">170dp</dimen>
     <dimen name="width_200">200dp</dimen>
+    <dimen name="width_300">300dp</dimen>
+    <dimen name="width_350">350dp</dimen>
+    <dimen name="width_400">400dp</dimen>
+    <dimen name="width_500">500dp</dimen>
 
     <!-- Height -->
     <dimen name="height_0">0dp</dimen>

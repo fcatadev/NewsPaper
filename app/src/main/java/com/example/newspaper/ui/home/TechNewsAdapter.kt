@@ -6,18 +6,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.newspaper.core.BaseAdapter
 import com.example.newspaper.data.model.response.ArticleResponse
 
-class TopHeadlinesAdapter : BaseAdapter<ArticleResponse>() {
+class TechNewsAdapter : BaseAdapter<ArticleResponse>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         inflater: LayoutInflater
     ): RecyclerView.ViewHolder {
-        return TopHeadlinesViewHolder(parent, inflater)
+        return TechNewsViewHolder(parent, inflater)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is TopHeadlinesViewHolder) {
+        if (holder is TechNewsViewHolder) {
             holder.bind(getItem(position))
         }
     }
+
 }

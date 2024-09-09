@@ -19,6 +19,8 @@
     <string name="news">News</string>
     <string name="paper">Paper</string>
     <string name="top_headlines">En Önemli Başlıklar</string>
+    <string name="connection_fail">Bağlantı hatası haberler yüklenemedi.</string>
+    <string name="tech_news">Teknoloji Haberleri</string>
 
     <!-- Maintenance -->
     <string name="maintenance_header">Bakımdayız…</string>

@@ -11,4 +11,8 @@ class NewsRepository @Inject constructor(
     suspend fun getTopHeadlines(country: String, apiKey: String): Response<NewsResponse> {
         return apiService.getTopHeadlines(country, apiKey)
     }
+
+    suspend fun getAllTechNews(query: String, apiKey: String): Response<NewsResponse> {
+        return apiService.getAllTechNews(query, apiKey)
+    }
 }
