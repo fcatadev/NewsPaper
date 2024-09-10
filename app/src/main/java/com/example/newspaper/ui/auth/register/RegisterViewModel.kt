@@ -50,7 +50,6 @@ class RegisterViewModel @Inject constructor(
                     _registerEvent.value = Event(RegisterViewEvent.NavigateToLogin)
                 } else {
                     errorMessage.value = task.exception?.message ?: "Kayıt işlemi başarısız."
-                    Log.d("135Hata: ", "${errorMessage.value}")
                 }
             }
     }
