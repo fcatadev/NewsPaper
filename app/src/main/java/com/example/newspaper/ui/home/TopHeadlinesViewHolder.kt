@@ -29,7 +29,7 @@ class TopHeadlinesViewHolder(
 
             Glide.with(binding.ivUrlToImage.context)
                 .load(item.urlToImage)
-                .error(R.drawable.ic_launcher_foreground)
+                .error(R.drawable.bg_image_not_found)
                 .listener(object : RequestListener<Drawable> {
                     override fun onLoadFailed(
                         e: GlideException?,

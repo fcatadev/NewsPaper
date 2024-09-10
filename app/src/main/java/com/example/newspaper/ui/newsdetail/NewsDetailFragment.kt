@@ -47,6 +47,7 @@ class NewsDetailFragment :
             binding.tvDate.text = bundle.getString(NewsKeys.PUBLISHEDAT)?.formatAsReadableDate()
             Glide.with(requireContext())
                 .load(bundle.getString(NewsKeys.URLTOIMAGE))
+                .error(R.drawable.bg_image_not_found)
                 .into(binding.ivNewsPic)
 
             currentArticle = getArticleFromUI()
