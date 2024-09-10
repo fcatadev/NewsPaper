@@ -24,7 +24,7 @@
     <string name="tech_news">Teknoloji Haberleri</string>
     <string name="already_added_fav">Bu haber zaten favorilere eklenmiştir.</string>
     <string name="is_exit_sure">Uygulamadan çıkmak istediğinize emin misiniz?</string>
-    <string name="empty_favorites">Favorilerine haber eklediğin ana buralar dolacak!</string>
+    <string name="empty_favorites">Favorilerine haber eklediğin an buralar dolacak!</string>
 
     <!-- Maintenance -->
     <string name="maintenance_header">Bakımdayız…</string>
@@ -35,7 +35,7 @@
     <string name="login_email">E-posta</string>
     <string name="login_password">Şifre</string>
     <string name="login">Giriş Yap</string>
-    <string name="sign_up_no_account">Henüz üye değilsen, hemen yeni hesap oluştur!</string>
+    <string name="sign_up_no_account">Henüz üye değilsen, hemen üye ol!</string>
     <string name="forgot_password">Şifremi Unuttum</string>
     <string name="remember_me">Beni hatırla</string>
     <string name="incorrect_login">Giriş bilgileriniz hatalıdır, lütfen tekrar deneyiniz.</string>
