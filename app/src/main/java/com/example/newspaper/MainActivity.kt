@@ -67,12 +67,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun showExitConfirmationDialog() {
         AlertDialog.Builder(this)
-            .setTitle("Çıkış")
-            .setMessage("Uygulamadan çıkmak istediğinize emin misiniz?")
-            .setPositiveButton("Evet") { _, _ ->
+            .setTitle(getString(R.string.exit))
+            .setMessage(getString(R.string.is_exit_sure))
+            .setPositiveButton(getString(R.string.yes)) { _, _ ->
                 signOut()
             }
-            .setNegativeButton("Hayır", null)
+            .setNegativeButton(getString(R.string.no), null)
             .show()
     }
 

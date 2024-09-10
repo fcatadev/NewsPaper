@@ -1,10 +1,6 @@
 package com.example.newspaper.ui.favorites
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.newspaper.R
@@ -29,6 +25,17 @@ class FavoriteFragment :
         binding.rvFavoriteNews.adapter = favoriteAdapter
         viewModel.favoriteArticles.observe(viewLifecycleOwner) { articles ->
             favoriteAdapter.submitList(articles)
+            updateEmptyState(articles.isEmpty())
+        }
+    }
+
+    private fun updateEmptyState(isEmpty: Boolean) {
+        if (isEmpty) {
+            binding.llEmptyView.visibility = View.VISIBLE
+            binding.rvFavoriteNews.visibility = View.GONE
+        } else {
+            binding.llEmptyView.visibility = View.GONE
+            binding.rvFavoriteNews.visibility = View.VISIBLE
         }
     }
 }

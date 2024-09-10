@@ -23,6 +23,8 @@
     <string name="connection_fail">Bağlantı hatası haberler yüklenemedi.</string>
     <string name="tech_news">Teknoloji Haberleri</string>
     <string name="already_added_fav">Bu haber zaten favorilere eklenmiştir.</string>
+    <string name="is_exit_sure">Uygulamadan çıkmak istediğinize emin misiniz?</string>
+    <string name="empty_favorites">Favorilerine haber eklediğin ana buralar dolacak!</string>
 
     <!-- Maintenance -->
     <string name="maintenance_header">Bakımdayız…</string>
