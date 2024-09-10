@@ -3,7 +3,7 @@
 
 Bu proje, Kotlin dilinde MVVM mimarisi kullanılarak geliştirilmiş bir haber uygulamasıdır. Giriş ve üyelik işlemleri için Firebase Authentication kullanılmış olup, şifremi unuttum, şifre sıfırlama ve beni hatırla gibi özellikler entegre edilmiştir. Uygulamanın ana sayfasında **En Önemli Haberler** ve **Teknoloji Haberleri** olmak üzere iki ayrı haber listesi bulunmaktadır. Haberler NewsAPI üzerinden alınmakta ve her bir habere tıklandığında detay sayfasına yönlendirme yapılmaktadır. Detay sayfasında kullanıcı, haberi favorilerine ekleyebilir ve daha sonra Favoriler sayfasında görüntüleyebilir. Favorilere eklenen haberler, istenildiğinde listeden kaldırılabilir.
 
-![In-App screenshots with background](https://i.ibb.co/vsxTbV4/AppLogo.jpg)
+![AppLogo](https://github.com/user-attachments/assets/95a5eb66-9fe7-4b0d-8b13-008c3755b75e)
 
 ## Kullanılan Teknolojiler ve Yapılar
 
